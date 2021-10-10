@@ -1,1 +1,7 @@
-// See if either @use or @import could be used...
+@use "abstracts";
+@use "base";
+@use "components";
+@use "layout";
+@use "pages";
+@use "themes";
+@use "vendor";
