@@ -9,13 +9,10 @@ import Legal from "../views/common/Legal";
 import PrivacyPolicy from "../views/common/PrivacyPolicy";
 import TermsOfUse from "../views/common/TermsOfUse";
 import NotFound from "../views/common/NotFound";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function AppRouter() {
   return (
     <Router>
-      <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -27,7 +24,6 @@ export default function AppRouter() {
         <Route exact path="/terms-of-use" component={TermsOfUse} />
         <Route path="*" component={NotFound} />
       </Switch>
-      <Footer />
     </Router>
   );
 }

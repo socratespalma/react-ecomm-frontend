@@ -3,25 +3,37 @@ import { Link } from "react-router-dom";
 
 export default function FooterNavbar() {
   return (
-    <nav>
+    <section className="footer-last-section">
       <p>© 2021 | Amapola Escarlata</p>
-      <ul>
-        <li>
-          <Link to="/privacy-policy">Política de privacidad</Link>
-        </li>
-        <li>
-          <Link to="/terms-of-use">Términos de uso</Link>
-        </li>
-        <li>
-          <Link to="/legal-info">Información legal</Link>
-        </li>
-        <li>
-          <Link to="/about-us">Nosotros</Link>
-        </li>
-        <li>
-          <Link to="/help">Ayuda</Link>
-        </li>
-      </ul>
-    </nav>
+      <nav className="footer-nav">
+        <ul>
+          <li className="footer-nav__li">
+            <Link to="/privacy-policy" className="footer-nav__li--nl">
+              Política de privacidad
+            </Link>
+          </li>
+          <li className="footer-nav__li">
+            <Link to="/terms-of-use" className="footer-nav__li--nl">
+              Términos de uso
+            </Link>
+          </li>
+          <li className="footer-nav__li">
+            <Link to="/legal-info" className="footer-nav__li--nl">
+              Información legal
+            </Link>
+          </li>
+          <li className="footer-nav__li">
+            <Link to="/about-us" className="footer-nav__li--nl">
+              Nosotros
+            </Link>
+          </li>
+          <li className="footer-nav__li">
+            <Link to="/help" className="footer-nav__li--nl">
+              Ayuda
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </section>
   );
 }

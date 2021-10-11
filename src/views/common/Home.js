@@ -6,10 +6,13 @@ import {
   FaGlobeAmericas,
 } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
-    <main className="home__main">
+    <main className="trick">
+      <Header />
       <section>
         <h1>Video goes here...</h1>
       </section>
@@ -163,6 +166,7 @@ const Home = () => {
           <h3>Personalizado para cada uno de nuestros clientes</h3>
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

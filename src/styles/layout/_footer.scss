@@ -1,0 +1,33 @@
+@use "../abstracts/index" as abs;
+
+.main-footer {
+  background-color: abs.$rosapastel;
+  font-family: abs.$montserratReg, sans-serif;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+
+  &__cta {
+    font-size: 1.7rem;
+  }
+}
+
+.social-subsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 9rem;
+  height: 2rem;
+  //   background-color: red;
+
+  &__anchor {
+    color: abs.$primary-color;
+  }
+
+  &__icons {
+    font-size: 2.1rem;
+  }
+}
