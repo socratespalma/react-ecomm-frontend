@@ -1,36 +1,90 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function HeaderNavbar() {
   return (
-    <nav>
+    <nav className="header-nav">
       <ul>
-        <li>
-          <Link to="">Vestidos</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/vestidos"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Vestidos
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Sombreros</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/sombreros"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Sombreros
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Mochilas</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/mochilas"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Mochilas
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Carteras</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/carteras"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Carteras
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Faldas</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/faldas"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Faldas
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Calzado</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/calzado"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Calzado
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Accesorios</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/accesorios"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Accesorios
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Camisas</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/camisas"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Camisas
+          </NavLink>
         </li>
-        <li>
-          <Link to="">Medias</Link>
+        <li className="header-nav__li">
+          <NavLink
+            to="/medias"
+            className="header-nav__li--nl"
+            activeClassName="active"
+          >
+            Medias
+          </NavLink>
         </li>
       </ul>
     </nav>

@@ -1,0 +1,28 @@
+@use "../abstracts/index" as abs;
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  background-color: abs.$header;
+
+  &__li {
+    display: inline-block;
+    list-style: none;
+
+    &--nl {
+      display: block;
+      text-decoration: none;
+      color: abs.$primary-color;
+      font-size: 1.1rem;
+      font-family: abs.$montserratReg, sans-serif;
+      padding: 0 1.7rem;
+    }
+  }
+}
+
+.active {
+  color: abs.$white;
+  @include abs.transition-ease-in-out;
+}

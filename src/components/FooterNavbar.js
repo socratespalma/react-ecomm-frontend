@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function FooterNavbar() {
   return (
     <nav>
+      <p>© 2021 | Amapola Escarlata</p>
       <ul>
         <li>
           <Link to="/privacy-policy">Política de privacidad</Link>

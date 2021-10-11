@@ -1,0 +1,28 @@
+@use "../abstracts/index" as abs;
+
+// * Fonts *
+
+@font-face {
+  font-family: abs.$caviarDreams;
+  src: url("../../assets/fonts/CaviarDreams.ttf");
+}
+
+@font-face {
+  font-family: abs.$helloVintage;
+  src: url("../../assets/fonts/HelloVintage.ttf");
+}
+
+@font-face {
+  font-family: abs.$montserratReg;
+  src: url("../../assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: abs.$montserratLt;
+  src: url("../../assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: abs.$montserratMd;
+  src: url("../../assets/fonts/Montserrat-Medium.ttf");
+}

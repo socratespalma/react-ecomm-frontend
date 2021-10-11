@@ -1,0 +1,39 @@
+@use "../abstracts/index" as abs;
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding: 0 5vw;
+
+  &__invisible {
+    min-width: 10vw;
+  }
+
+  &__logo {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+    font-style: italic;
+    font-family: abs.$helloVintage, sans-serif;
+    color: abs.$logo;
+  }
+}
+
+.main-subsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 6rem;
+  height: 2rem;
+
+  &__icons {
+    color: abs.$logo;
+    font-size: 1.5rem;
+  }
+
+  &__user {
+    font-size: 1.4rem;
+  }
+}
