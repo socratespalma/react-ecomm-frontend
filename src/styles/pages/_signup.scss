@@ -1,0 +1,14 @@
+.main-signup-section {
+  display: flex;
+}
+
+.signup-section {
+  margin: 6rem auto 0;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    justify-content: space-around;
+  }
+}
