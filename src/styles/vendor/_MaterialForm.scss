@@ -1,34 +1,30 @@
+@use "sass:math";
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 $body-bg: #fff;
 // Shadows
-$shadow-inset: inset 0 2px 2px 0 rgba(0, 0, 0, .14);
+$shadow-inset: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 $shadow-0: 0 0 1px rgba(0, 0, 0, 0);
-$shadow-2: 0 2px 2px 0 rgba(0, 0, 0, .14),
-0 3px 1px -2px rgba(0, 0, 0, .2),
-0 1px 5px 0 rgba(0, 0, 0, .12);
-$shadow-3: 0 3px 4px 0 rgba(0, 0, 0, .14),
-0 3px 3px -2px rgba(0, 0, 0, .2),
-0 1px 8px 0 rgba(0, 0, 0, .12);
-$shadow-4: 0 4px 5px 0 rgba(0, 0, 0, .14),
-0 1px 10px 0 rgba(0, 0, 0, .12),
-0 2px 4px -1px rgba(0, 0, 0, .2);
-$shadow-6: 0 6px 10px 0 rgba(0, 0, 0, .14),
-0 1px 18px 0 rgba(0, 0, 0, .12),
-0 3px 5px -1px rgba(0, 0, 0, .2);
-$shadow-8: 0 8px 10px 1px rgba(0, 0, 0, .14),
-0 3px 14px 2px rgba(0, 0, 0, .12),
-0 5px 5px -3px rgba(0, 0, 0, .2);
+$shadow-2: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+$shadow-3: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+  0 1px 8px 0 rgba(0, 0, 0, 0.12);
+$shadow-4: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+  0 2px 4px -1px rgba(0, 0, 0, 0.2);
+$shadow-6: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+  0 3px 5px -1px rgba(0, 0, 0, 0.2);
+$shadow-8: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 // Font Sizes
 $mf-font-size: 1rem !default;
 $mf-active-font-size: $mf-font-size * 0.8 !default;
 $mf-active-top: -$mf-font-size !default;
 // Margin & Paddings
 $mf-gap: $mf-font-size * 1.5 !default;
-$mf-spacer: $mf-font-size / 8 !default;
+$mf-spacer: math.div($mf-font-size, 8) !default;
 $mf-fieldset-margin: 0 0 $mf-gap * 2 !default;
 $mf-checkbox-gap: $mf-font-size * 2 !default;
 $mf-checkbox-top: 0 !default;
-$mf-radio-margin: $mf-font-size / -4 !default;
+$mf-radio-margin: math.div($mf-font-size, -4) !default;
 // Colors
 $mf-input-color: #333 !default;
 $mf-border-color: #999 !default;
@@ -47,7 +43,7 @@ $mf-transition-speed: 0.28s !default;
   padding: 4rem 5rem;
   border-radius: 1px;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -82,8 +78,8 @@ fieldset {
 }
 
 .form-inline {
-  >.form-group,
-  >.btn {
+  > .form-group,
+  > .btn {
     display: inline-block;
     margin-bottom: 0;
   }
@@ -122,7 +118,7 @@ fieldset {
     width: 100%;
     font-size: $mf-font-size;
     height: ($mf-font-size * 1.6);
-    padding: $mf-spacer $mf-spacer ($mf-spacer / 2);
+    padding: $mf-spacer $mf-spacer math.div($mf-spacer, 2);
     background: none;
     border: none;
     line-height: 1.6;
@@ -130,7 +126,7 @@ fieldset {
   }
   .control-label {
     position: absolute;
-    top: ($mf-font-size / 4);
+    top: math.div($mf-font-size, 4);
     pointer-events: none;
     padding-left: $mf-spacer;
     z-index: 1;
@@ -152,17 +148,18 @@ fieldset {
   }
   .bar {
     position: relative;
-    border-bottom: ($mf-font-size / 16) solid $mf-border-color;
+    border-bottom: math.div($mf-font-size, 16) solid $mf-border-color;
     display: block;
     &::before {
-      content: '';
-      height: ($mf-font-size / 8);
+      content: "";
+      height: math.div($mf-font-size, 8);
       width: 0;
       left: 50%;
-      bottom: ($mf-font-size / -16);
+      bottom: math.div($mf-font-size, -16);
       position: absolute;
       background: $mf-focus-color;
-      transition: left $mf-transition-speed ease, width $mf-transition-speed ease;
+      transition: left $mf-transition-speed ease,
+        width $mf-transition-speed ease;
       z-index: 2;
     }
   }
@@ -170,7 +167,7 @@ fieldset {
   textarea {
     display: block;
     background: none;
-    padding: $mf-spacer $mf-spacer ($mf-spacer / 2);
+    padding: $mf-spacer $mf-spacer math.div($mf-spacer, 2);
     font-size: $mf-font-size;
     border-width: 0;
     border-color: transparent;
@@ -216,12 +213,12 @@ fieldset {
   }
   input[type="file"] {
     line-height: 1;
-    ~.bar {
+    ~ .bar {
       display: none;
     }
   }
   input:invalid {
-    ~.input-error {
+    ~ .input-error {
       display: block;
     }
   }
@@ -235,7 +232,7 @@ fieldset {
   textarea.form-file,
   textarea.has-value {
     color: $mf-input-color;
-    ~.control-label {
+    ~ .control-label {
       font-size: $mf-active-font-size;
       color: $mf-active-color;
       top: $mf-active-top;
@@ -247,10 +244,10 @@ fieldset {
   textarea {
     &:focus {
       outline: none;
-      ~.control-label {
+      ~ .control-label {
         color: $mf-focus-color;
       }
-      ~.bar {
+      ~ .bar {
         &::before {
           width: 100%;
           left: 0;
@@ -292,7 +289,7 @@ fieldset {
     color: $mf-border-color;
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -301,7 +298,7 @@ fieldset {
       height: $mf-font-size;
       transition: transform $mf-transition-speed ease;
       border-radius: 50%;
-      border: ($mf-font-size / 8) solid currentColor;
+      border: math.div($mf-font-size, 8) solid currentColor;
     }
     &::after {
       transform: scale(0);
@@ -314,7 +311,7 @@ fieldset {
   }
   // scss-lint:disable QualifyingElement, NestingDepth
   input:checked {
-    ~.helper {
+    ~ .helper {
       &::after {
         transform: scale(0.5);
       }
@@ -337,8 +334,8 @@ fieldset {
     width: $mf-font-size;
     height: $mf-font-size;
     z-index: 0;
-    border: ($mf-font-size / 8) solid currentColor;
-    border-radius: ($mf-font-size / 16);
+    border: math.div($mf-font-size, 8) solid currentColor;
+    border-radius: math.div($mf-font-size, 16);
     transition: border-color $mf-transition-speed ease;
     &::before,
     &::after {
@@ -348,16 +345,17 @@ fieldset {
       background-color: $mf-focus-color;
       display: block;
       transform-origin: left top;
-      border-radius: ($mf-font-size / 4);
-      content: '';
-      transition: opacity $mf-transition-speed ease, height 0s linear $mf-transition-speed;
+      border-radius: math.div($mf-font-size, 4);
+      content: "";
+      transition: opacity $mf-transition-speed ease,
+        height 0s linear $mf-transition-speed;
       opacity: 0;
     }
     &::before {
       top: ($mf-font-size * 0.65);
       left: ($mf-font-size * 0.38);
       transform: rotate(-135deg);
-      box-shadow: 0 0 0 ($mf-font-size / 16) $body-bg;
+      box-shadow: 0 0 0 math.div($mf-font-size, 16) $body-bg;
     }
     &::after {
       top: ($mf-font-size * 0.3);
@@ -369,7 +367,7 @@ fieldset {
     color: $mf-focus-color;
   }
   input:checked {
-    ~.helper {
+    ~ .helper {
       color: $mf-focus-color;
       &::after,
       &::before {
@@ -377,7 +375,7 @@ fieldset {
         transition: height $mf-transition-speed ease;
       }
       &::after {
-        height: ($mf-font-size / 2);
+        height: math.div($mf-font-size, 2);
       }
       &::before {
         height: ($mf-font-size * 1.2);
@@ -387,8 +385,8 @@ fieldset {
   }
 }
 
-.radio+.radio,
-.checkbox+.checkbox {
+.radio + .radio,
+.checkbox + .checkbox {
   margin-top: $mf-font-size;
 }
 
@@ -424,10 +422,11 @@ fieldset {
   border: 1px solid currentColor;
   font-size: ($mf-font-size * 1.1);
   color: lighten($mf-focus-color, 10%);
-  margin: ( $mf-gap * 2) 0;
-  padding: ($mf-gap / 2) ($mf-gap * 2);
+  margin: ($mf-gap * 2) 0;
+  padding: math.div($mf-gap, 2) ($mf-gap * 2);
   cursor: pointer;
-  transition: background-color $mf-transition-speed ease, color $mf-transition-speed ease, box-shadow $mf-transition-speed ease;
+  transition: background-color $mf-transition-speed ease,
+    color $mf-transition-speed ease, box-shadow $mf-transition-speed ease;
   overflow: hidden;
   box-shadow: $shadow-2;
   span {
@@ -436,7 +435,7 @@ fieldset {
     z-index: 1;
   }
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     background: darken($mf-focus-color, 40%);
     border: 50vh solid darken($mf-focus-color, 20%);
@@ -457,7 +456,8 @@ fieldset {
   &:active,
   &:focus {
     &::before {
-      transition: transform ($mf-transition-speed * 4) ease, opacity $mf-transition-speed ease ($mf-transition-speed * 1.3);
+      transition: transform ($mf-transition-speed * 4) ease,
+        opacity $mf-transition-speed ease ($mf-transition-speed * 1.3);
       transform: translate(-50%, -50%) scale(1);
       opacity: 0;
     }

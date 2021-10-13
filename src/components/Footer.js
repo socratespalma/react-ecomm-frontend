@@ -9,6 +9,7 @@ export default function Footer() {
       <section className="social-subsection">
         <a
           target="_blank"
+          rel="noreferrer"
           href="https://www.facebook.com/Amapola-Escarlata-1765011270283166"
           className="social-subsection__anchor"
         >
@@ -16,14 +17,15 @@ export default function Footer() {
         </a>
         <a
           target="_blank"
+          rel="noreferrer"
           href="https://www.instagram.com/amapola_escarlata/"
           className="social-subsection__anchor"
         >
           <FaInstagram className="social-subsection__icons" />
         </a>
-        <a href="#" className="social-subsection__anchor">
-          <FaWhatsapp className="social-subsection__icons" />
-        </a>
+        {/* <a href="#" className="social-subsection__anchor"> */}
+        <FaWhatsapp className="social-subsection__icons" />
+        {/* </a> */}
       </section>
       <FooterNavbar />
     </div>
