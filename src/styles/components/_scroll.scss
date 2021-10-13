@@ -1,0 +1,47 @@
+@use "../abstracts/index" as *;
+
+/*=============== SCROLL UP ===============*/
+
+.scrollup {
+  position: fixed;
+  display: inline-flex;
+  background: $logo;
+  right: 2rem;
+  bottom: -20%;
+  padding: 1rem;
+  border-radius: 50%;
+  z-index: 100;
+  opacity: .8;
+  transition: 1s;
+  &:hover {
+    background-color: $logo;
+    opacity: 1;
+  }
+  &__icon {
+    font-size: 1.8rem;
+    color: $primary-color;
+  }
+}
+
+
+/* Show Scroll Up*/
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+
+/*=============== SCROLL BAR ===============*/
+
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: $rosapastel;
+  &-thumb {
+    background-color: $beige;
+    border-radius: .5rem;
+    &:hover {
+      background-color: $logo;
+    }
+  }
+}

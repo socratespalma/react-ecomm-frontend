@@ -8,17 +8,21 @@ import {
 import { BiSupport } from "react-icons/bi";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ScrollUp from "../../components/ScrollUp";
 
 const Home = () => {
   return (
     <main className="trick">
       <Header />
+      {/* HERO VIDEO */}
       <section>
         <h1>Video goes here...</h1>
       </section>
+      {/* SLOGAN */}
       <article>
         <p>Prendas y accesorios vintage, con un toque único y especial.</p>
       </article>
+      {/* NOVEDADES */}
       <section>
         <h1>Novedades</h1>
         <div>
@@ -50,6 +54,7 @@ const Home = () => {
           <FaChevronRight />
         </div>
       </section>
+      {/* LO MAS BUSCADO */}
       <section>
         <h1>Lo más buscado</h1>
         <div className="home__grid">
@@ -149,6 +154,7 @@ const Home = () => {
           </figure>
         </div>
       </section>
+      {/* FEATURES */}
       <section>
         <div>
           <FaCreditCard />
@@ -167,6 +173,7 @@ const Home = () => {
         </div>
       </section>
       <Footer />
+      <ScrollUp />
     </main>
   );
 };

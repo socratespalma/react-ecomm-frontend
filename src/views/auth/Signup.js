@@ -10,7 +10,6 @@ const Signup = ({ onSignup }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [passwd, setPasswd] = useState("");
-  const [reminder, setReminder] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
