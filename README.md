@@ -40,3 +40,21 @@
     ├── /utils (utility/helper methods, validations, etc. That can be shared across the entire project)
     └── /views (Any page in our app)
 ```
+
+
+## Usage
+
+### Install dependencies
+```sh
+yarn
+```
+
+### Run React dev server (<http://localhost:3000>)
+```sh
+yarn start
+```
+
+### To build for production
+```sh
+yarn build
+```
