@@ -38,29 +38,6 @@ $mf-focus-color: #ef286b !default;
 $mf-error-color: #d9534f !default;
 // Animation
 $mf-transition-speed: 0.28s !default;
-body,
-input,
-select,
-textarea,
-body * {
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
-  &::after,
-  &::before {
-    box-sizing: border-box;
-  }
-}
-
-body {
-  background-image: linear-gradient(top, darken($body-bg, 5%), darken($body-bg, 10%));
-}
-
-h1 {
-  font-size: 2rem;
-  text-align: center;
-  margin: 0 0 2em;
-}
-
 .form-container {
   position: relative;
   max-width: 40rem;

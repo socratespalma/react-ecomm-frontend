@@ -12,3 +12,11 @@
     float: right;
   }
 }
+
+.login {
+  &__title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0 0 2em;
+  }
+}

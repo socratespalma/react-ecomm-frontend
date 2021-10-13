@@ -32,7 +32,7 @@ const Login = ({ onLogin }) => {
         <SidePanel />
         <div className="login-section">
           <div className="login form-container">
-            <h1> Iniciar Sesión </h1>
+            <h1 className="login__title"> Iniciar Sesión </h1>
             <form className="login__form" onSubmit={onSubmit}>
               <div className="form-group">
                 <input

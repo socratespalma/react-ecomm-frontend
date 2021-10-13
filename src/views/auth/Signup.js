@@ -32,8 +32,8 @@ const Signup = ({ onSignup }) => {
       <section className="main-signup-section">
         <SidePanel />
         <section className="signup-section">
-          <div className="login form-container">
-            <h1> Registrarse </h1>
+          <div className="signup form-container">
+            <h1 className="signup__title"> Registrarse </h1>
             <form className="login__form" onSubmit={onSubmit}>
               <div className="form-group">
                 <input
