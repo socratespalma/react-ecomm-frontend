@@ -15,17 +15,19 @@ const Home = () => {
     <main className="trick">
       <Header />
       {/* HERO VIDEO */}
-      <section>
+      <section className="video-section">
         <h1>Video goes here...</h1>
       </section>
       {/* SLOGAN */}
-      <article>
-        <p>Prendas y accesorios vintage, con un toque único y especial.</p>
-      </article>
-      {/* NOVEDADES */}
-      <section>
-        <h1>Novedades</h1>
-        <div>
+      <section className="slogan-section">
+        <p className="slogan-section__text">
+          Prendas y accesorios vintage, con un toque único y especial.
+        </p>
+      </section>
+      {/* NOVEDADES (Component) */}
+      <section className="news-section">
+        <h1 className="news-section__title">Novedades</h1>
+        <div className="scroll-banner">
           <FaChevronLeft />
           <figure>
             <img
@@ -54,7 +56,7 @@ const Home = () => {
           <FaChevronRight />
         </div>
       </section>
-      {/* LO MAS BUSCADO */}
+      {/* LO MAS BUSCADO (Component) */}
       <section>
         <h1>Lo más buscado</h1>
         <div className="home__grid">
@@ -155,7 +157,7 @@ const Home = () => {
         </div>
       </section>
       {/* FEATURES */}
-      <section>
+      <section className="features-section">
         <div>
           <FaCreditCard />
           <h2>Compra segura en línea</h2>
