@@ -1,0 +1,16 @@
+@use "../abstracts/index" as abs;
+
+.main-sidepanel {
+  background-color: abs.$beige;
+  width: 20rem;
+  height: 100vh;
+  padding: 7rem 1rem;
+
+  &__imgcontainer {
+    width: 18rem;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
