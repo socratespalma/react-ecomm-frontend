@@ -1,15 +1,14 @@
-.main-loginsection {
+.main-login-section {
   display: flex;
 }
 
-.form-container {
+.login-section {
   max-width: 40rem;
   margin: 2rem auto;
   width: 100%;
   padding: 0 3rem;
-}
-
-a {
-  text-decoration: none;
-  float: right;
+  a {
+    text-decoration: none;
+    float: right;
+  }
 }

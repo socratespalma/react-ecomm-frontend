@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SidePanel from "../../components/SidePanel";
-import PropTypes from "prop-types";
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -27,12 +28,12 @@ const Login = ({ onLogin }) => {
   return (
     <main className="trick">
       <Header />
-      <section className="main-loginsection">
+      <section className="main-login-section">
         <SidePanel />
-        <div className="form-container">
-          <div className="container">
-            <h1> This is login page </h1>
-            <form className="login-form" onSubmit={onSubmit}>
+        <div className="login-section">
+          <div className="login form-container">
+            <h1> Iniciar Sesión </h1>
+            <form className="login__form" onSubmit={onSubmit}>
               <div className="form-group">
                 <input
                   type="email"
@@ -42,7 +43,7 @@ const Login = ({ onLogin }) => {
                   required
                 />
                 <label class="control-label" for="input">
-                  Name
+                  Correo
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
@@ -56,7 +57,7 @@ const Login = ({ onLogin }) => {
                   required
                 />
                 <label class="control-label" for="input">
-                  Name
+                  Contraseña
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
@@ -79,9 +80,9 @@ const Login = ({ onLogin }) => {
             </form>
             <a href="#">¿Olvidaste tu contraseña?</a>
           </div>
-          <div className="container">
+          <div className="form-container">
             <p>
-              ¿No tienes una cuenta? <a href="#">Registrate aquí</a>
+              ¿No tienes una cuenta? <Link to="/signup">Registrate aquí</Link>
             </p>
           </div>
         </div>
