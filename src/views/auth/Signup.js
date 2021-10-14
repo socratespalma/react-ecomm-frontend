@@ -41,11 +41,11 @@ const Signup = ({ onSignup }) => {
                   onChange={(e) => setUsername(e.target.value)}
                   required
                 />
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Usuario
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
               </div>
               <div className="form-group">
                 <input
@@ -55,11 +55,11 @@ const Signup = ({ onSignup }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Correo
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
               </div>
               <div className="form-group">
                 <input
@@ -69,13 +69,13 @@ const Signup = ({ onSignup }) => {
                   onChange={(e) => setPasswd(e.target.value)}
                   required
                 />
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Contraseña
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
               </div>
-              <button class="button" type="submit">
+              <button className="button" type="submit">
                 <span>Registrarse</span>
               </button>
             </form>

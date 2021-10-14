@@ -34,7 +34,7 @@ const Login = ({ onLogin }) => {
           <div className="login form-container">
             <h1 className="login__title"> Iniciar Sesión </h1>
             <form className="login__form" onSubmit={onSubmit}>
-              <div className="form-group">
+              <div className="has-error form-group">
                 <input
                   type="email"
                   placeholder="user@ecomm.com"
@@ -42,11 +42,11 @@ const Login = ({ onLogin }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Correo
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
               </div>
               <div className="form-group">
                 <input
@@ -56,11 +56,11 @@ const Login = ({ onLogin }) => {
                   onChange={(e) => setPasswd(e.target.value)}
                   required
                 />
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Contraseña
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
               </div>
               <div className="checkbox">
                 <label>
@@ -70,11 +70,10 @@ const Login = ({ onLogin }) => {
                     value={reminder}
                     onChange={(e) => setReminder(e.currentTarget.checked)}
                   />
-                  <i class="helper"></i>
-                  Recordar usuario
+                  <i className="helper"></i>Recordar usuario
                 </label>
               </div>
-              <button class="button" type="submit">
+              <button className="button" type="submit">
                 <span>Iniciar Sesión</span>
               </button>
             </form>
