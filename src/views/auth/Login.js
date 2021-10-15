@@ -5,26 +5,8 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SidePanel from "../../components/SidePanel";
 import axios from "axios";
+import Notiflix from "notiflix";
 
-// const Login = ({ onLogin }) => {
-//   const [email, setEmail] = useState("");
-//   const [passwd, setPasswd] = useState("");
-//   const [reminder, setReminder] = useState("");
-
-//   const onSubmit = (e) => {
-//     e.preventDefault();
-
-//     if (!email || !passwd) {
-//       alert("Please add a valid user");
-//       return;
-//     }
-
-//     onLogin({ email, passwd, reminder });
-
-//     setEmail("");
-//     setPasswd("");
-//     setReminder(false);
-//   };
 function Login() {
   const history = useHistory();
   const [loginInput, setLogin] = useState({
@@ -51,15 +33,12 @@ function Login() {
         if (res.data.status === 200) {
           localStorage.setItem("auth_token", res.data.token);
           localStorage.setItem("auth_name", res.data.username);
-          alert("Success");
+          Notiflix.Notify.success("Inicio de sesión con éxito");
           history.push("/");
         } else if (res.data.status === 401) {
-          alert("Error");
+          Notiflix.Notify.failure("Credenciales inválidas");
         } else {
-          setLogin({
-            ...loginInput,
-            error_list: res.data.validation_errors,
-          });
+          setLogin({ ...loginInput, error_list: res.data.validation_errors });
         }
       });
     });
@@ -83,12 +62,13 @@ function Login() {
                   value={loginInput.email}
                   required
                 />
-                <span>{loginInput.error_list.email}</span>
+
                 <label class="control-label" for="input">
                   Correo
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
+                <span>{loginInput.error_list.email}</span>
               </div>
               <div className="form-group">
                 <input
@@ -99,23 +79,24 @@ function Login() {
                   value={loginInput.password}
                   required
                 />
-                <span>{loginInput.error_list.password}</span>
+
                 <label class="control-label" for="input">
                   Contraseña
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
+                <span>{loginInput.error_list.password}</span>
               </div>
-              <div className="checkbox">
+              {/* <div className="checkbox">
                 <label>
                   <input
                     type="checkbox"
-                    // onChange={(e) => setReminder(e.currentTarget.checked)}
+                    onChange={(e) => setReminder(e.currentTarget.checked)}
                   />
                   <i class="helper"></i>
                   Recordar usuario
                 </label>
-              </div>
+              </div> */}
               <button class="button" type="submit">
                 <span>Iniciar Sesión</span>
               </button>

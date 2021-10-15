@@ -2,30 +2,10 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-// import PropTypes from "prop-types";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SidePanel from "../../components/SidePanel";
-
-// const Signup = ({ onSignup }) => {
-//   const [username, setUsername] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [passwd, setPasswd] = useState("");
-
-//   const onSubmit = (e) => {
-//     e.preventDefault();
-
-//     if (!email || !passwd) {
-//       alert("Please add a valid user");
-//       return;
-//     }
-
-//     onSignup({ username, email, passwd });
-
-//     setUsername("");
-//     setEmail("");
-//     setPasswd("");
-//   };
+import Notiflix from "notiflix";
 
 function Signup() {
   const history = useHistory();
@@ -55,7 +35,7 @@ function Signup() {
         if (res.data.status === 200) {
           localStorage.setItem("auth_token", res.data.token);
           localStorage.setItem("auth_name", res.data.username);
-          alert("Success");
+          Notiflix.Notify.success("Registro de usuario exitoso");
           history.push("/");
         } else {
           setRegister({
@@ -84,12 +64,13 @@ function Signup() {
                   value={registerInput.name}
                   required
                 />
-                <span>{registerInput.error_list.name}</span>
+
                 <label class="control-label" for="input">
                   Usuario
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
+                <span>{registerInput.error_list.name}</span>
               </div>
               <div className="form-group">
                 <input
@@ -100,12 +81,13 @@ function Signup() {
                   value={registerInput.email}
                   required
                 />
-                <span>{registerInput.error_list.email}</span>
+
                 <label class="control-label" for="input">
                   Correo
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
+                <span>{registerInput.error_list.email}</span>
               </div>
               <div className="form-group">
                 <input
@@ -116,12 +98,13 @@ function Signup() {
                   value={registerInput.password}
                   required
                 />
-                <span>{registerInput.error_list.password}</span>
+
                 <label class="control-label" for="input">
                   Contraseña
                 </label>
                 <i class="bar"></i>
                 <i class="input-error">error here</i>
+                <span>{registerInput.error_list.password}</span>
               </div>
               <button class="button" type="submit">
                 <span>Registrarse</span>
@@ -143,11 +126,5 @@ function Signup() {
     </main>
   );
 }
-
-// };
-
-// Signup.propTypes = {
-//   onLogin: PropTypes.func,
-// };
 
 export default Signup;
