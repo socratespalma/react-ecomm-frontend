@@ -1,6 +1,5 @@
 import axios from "axios";
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -47,6 +46,10 @@ function Signup() {
     });
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="trick">
       <Header />
@@ -65,11 +68,11 @@ function Signup() {
                   required
                 />
 
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Usuario
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
                 <span>{registerInput.error_list.name}</span>
               </div>
               <div className="form-group">
@@ -82,11 +85,11 @@ function Signup() {
                   required
                 />
 
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Correo
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
                 <span>{registerInput.error_list.email}</span>
               </div>
               <div className="form-group">
@@ -99,14 +102,14 @@ function Signup() {
                   required
                 />
 
-                <label class="control-label" for="input">
+                <label className="control-label" htmlFor="input">
                   Contraseña
                 </label>
-                <i class="bar"></i>
-                <i class="input-error">error here</i>
+                <i className="bar"></i>
+                <i className="input-error">error here</i>
                 <span>{registerInput.error_list.password}</span>
               </div>
-              <button class="button" type="submit">
+              <button className="button" type="submit">
                 <span>Registrarse</span>
               </button>
             </form>

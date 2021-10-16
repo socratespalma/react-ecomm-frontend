@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -11,6 +11,10 @@ import Footer from "../../components/Footer";
 import ScrollUp from "../../components/ScrollUp";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="trick">
       <Header />
