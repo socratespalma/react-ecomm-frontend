@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaCreditCard,
-  FaGlobeAmericas,
-} from "react-icons/fa";
+import { FaCreditCard, FaGlobeAmericas } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ScrollUp from "../../components/ScrollUp";
+import Carousel from "../../components/Carousel";
 
 const Home = () => {
   useEffect(() => {
@@ -18,142 +14,143 @@ const Home = () => {
   return (
     <main className="trick">
       <Header />
-      {/* HERO VIDEO */}
-      <section className="video-section">
-        <h1>Video goes here...</h1>
+      {/* HERO section */}
+      <section className="hero-section">
+        <div className="hero-section__copy">
+          <h1 className="hero-section__title">
+            Somos una tienda <span className="bb-word">diferente</span>
+          </h1>
+          <h2 className="hero-section__subtitle">
+            Brindamos la mejor experiencia a nuestros clientes
+          </h2>
+          <a href="#slogan-section" className="hero-section__cta">
+            Aprender más
+          </a>
+        </div>
       </section>
       {/* SLOGAN */}
-      <section className="slogan-section">
+      <section id="slogan-section" className="slogan-section">
         <p className="slogan-section__text">
           Prendas y accesorios vintage, con un toque único y especial.
         </p>
       </section>
-      {/* NOVEDADES (Component) */}
+      {/* NOVEDADES */}
       <section className="news-section">
         <h1 className="news-section__title">Novedades</h1>
-        <div className="scroll-banner">
-          <FaChevronLeft />
-          <figure>
-            <img
-              src={require("../../assets/images/boinaAmarilla.jpg").default}
-              alt="Boina-amarilla"
-            />
-          </figure>
-          <figure>
-            <img
-              src={require("../../assets/images/ZapatosRosa.jpg").default}
-              alt="Zapatos-rosa"
-            />
-          </figure>
-          <figure>
-            <img
-              src={require("../../assets/images/Mochila.jpg").default}
-              alt="Mochila"
-            />
-          </figure>
-          <figure>
-            <img
-              src={require("../../assets/images/BolsasConchas.jpg").default}
-              alt="Bolsas-concha"
-            />
-          </figure>
-          <FaChevronRight />
-        </div>
+        <Carousel />
       </section>
       {/* LO MAS BUSCADO (Component) */}
-      <section>
-        <h1>Lo más buscado</h1>
-        <div className="home__grid">
-          <figure>
+      <section className="ms-section">
+        <h1 className="ms-section__title">Lo más buscado</h1>
+        <div className="ms-section__grid">
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={
                 require("../../assets/images/sombreroclasicoRojo.jpg").default
               }
               alt="Sombrero-rojo"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/camisetaBotanica.jpg").default}
               alt="Camiseta-botanica"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/calcetasMesh.jpg").default}
               alt="Calcetas-mesh"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/vestidoLucy.jpg").default}
               alt="Vestido-lucy"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={
                 require("../../assets/images/cadenaMapaNicaragua.jpg").default
               }
               alt="Cadena-nic"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/Calcetas.jpg").default}
               alt="Calcetas"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/Cuellos.jpg").default}
               alt="Cuellos"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/Pines.jpg").default}
               alt="Pines"
             />
           </figure>
-          <figure>
+          <figure className="ms-section__container">
             <img
+              className="ms-section__container--img"
               src={require("../../assets/images/fondoamapolas.jpg").default}
               alt="Fondo-amapolas"
             />
             <img
+              className="ms-section__container--img product-img"
               src={require("../../assets/images/BrocheEatMe.jpg").default}
               alt="Broche-eatme"
             />
@@ -162,20 +159,32 @@ const Home = () => {
       </section>
       {/* FEATURES */}
       <section className="features-section">
-        <div>
-          <FaCreditCard />
-          <h2>Compra segura en línea</h2>
-          <h3>Tus datos estan protegidos bajo un sistema encriptado</h3>
+        <div className="features-section__container">
+          <FaCreditCard className="features-section__container--icon" />
+          <h2 className="features-section__container--title">
+            Compra segura en línea
+          </h2>
+          <h3 className="features-section__container--description">
+            Tus datos están protegidos bajo un sistema cifrado
+          </h3>
         </div>
-        <div>
-          <FaGlobeAmericas />
-          <h2>Envíos internacionales</h2>
-          <h3>Hasta tu hogar</h3>
+        <div className="features-section__container">
+          <FaGlobeAmericas className="features-section__container--icon" />
+          <h2 className="features-section__container--title">
+            Envíos internacionales
+          </h2>
+          <h3 className="features-section__container--description">
+            Hasta tu hogar
+          </h3>
         </div>
-        <div>
-          <BiSupport />
-          <h2>Soporte técnico 24/7</h2>
-          <h3>Personalizado para cada uno de nuestros clientes</h3>
+        <div className="features-section__container">
+          <BiSupport className="features-section__container--icon" />
+          <h2 className="features-section__container--title">
+            Soporte técnico 24/7
+          </h2>
+          <h3 className="features-section__container--description">
+            Personalizado para cada uno de nuestros clientes
+          </h3>
         </div>
       </section>
       <Footer />

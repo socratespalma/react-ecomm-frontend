@@ -8,6 +8,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .trick {
   display: flex;
   flex-direction: column;
