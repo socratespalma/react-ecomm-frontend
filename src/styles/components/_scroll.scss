@@ -11,10 +11,11 @@
   padding: 1rem;
   border-radius: 50%;
   z-index: 100;
-  opacity: .8;
-  transition: .4s;
+  opacity: 0.8;
+  transition: 0.4s;
   &:hover {
     background-color: $logo;
+    cursor: pointer;
     opacity: 1;
   }
   &__icon {
@@ -23,23 +24,21 @@
   }
 }
 
-
 /* Show Scroll Up*/
 
 .show-scroll {
   bottom: 3rem;
 }
 
-
 /*=============== SCROLL BAR ===============*/
 
 ::-webkit-scrollbar {
-  width: .6rem;
-  border-radius: .5rem;
+  width: 0.6rem;
+  border-radius: 0.5rem;
   background-color: $rosapastel;
   &-thumb {
     background-color: $beige;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     &:hover {
       background-color: $logo;
     }
