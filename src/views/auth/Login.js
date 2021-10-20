@@ -33,7 +33,11 @@ function Login() {
           localStorage.setItem("auth_token", res.data.token);
           localStorage.setItem("auth_name", res.data.username);
           Notiflix.Notify.success("Inicio de sesión con éxito");
-          history.push("/");
+          if (res.data.role === "admin") {
+            history.push("/admin/dashboard");
+          } else {
+            history.push("/");
+          }
         } else if (res.data.status === 401) {
           Notiflix.Notify.failure("Credenciales inválidas");
         } else {
@@ -101,7 +105,7 @@ function Login() {
                 <span>Iniciar Sesión</span>
               </button>
             </form>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <Link to="">¿Olvidaste tu contraseña?</Link>
           </div>
           <div className="form-container">
             <p>
