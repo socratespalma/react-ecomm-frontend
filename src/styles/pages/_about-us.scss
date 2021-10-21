@@ -6,13 +6,13 @@
     justify-content: center;
     align-items: center;
   }
-  &__section:nth-child(1),
-  &__section:nth-child(2) {
-    align-items: flex-end;
-  }
   &__wrap {
     display: flex;
     width: 100%;
+     :nth-child(1),
+     :nth-child(2) {
+      align-items: flex-end;
+    }
   }
   &__img {
     width: 100%;
