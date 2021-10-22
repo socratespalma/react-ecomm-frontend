@@ -133,11 +133,9 @@
       font-size: 2rem;
     }
     &--title {
+      margin: 0;
       padding: 1rem 0;
       font-family: abs.$montserratReg;
-    }
-    &--description {
-      font-size: 1rem;
     }
   }
 }

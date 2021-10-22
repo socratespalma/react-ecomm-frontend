@@ -7,7 +7,7 @@ export default function HeaderNavbar() {
       <ul>
         <li className="header-nav__li">
           <NavLink
-            to="/vestidos"
+            to="/products"
             className="header-nav__li--nl"
             activeClassName="active"
           >

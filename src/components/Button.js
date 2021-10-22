@@ -1,19 +1,22 @@
 import PropTypes from "prop-types";
 
-const Button = ({ text, onClick }) => {
+const Button = ({ label, onClick, className }) => {
   return (
-    <button onClick={onClick} className="btn">
-      {text}
+    <button onClick={onClick} className={`btn ${className && className}`}>
+      {/* {Icon} */}
+      <label htmlFor="btn" className="btn__label">
+        {label}
+      </label>
     </button>
   );
 };
 
 Button.defaultProps = {
-  text: "Iniciar Sesión",
+  label: "Iniciar Sesión",
 };
 
 Button.propTypes = {
-  text: PropTypes.string,
+  label: PropTypes.string,
   onClick: PropTypes.func,
 };
 

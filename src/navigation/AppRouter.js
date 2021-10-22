@@ -17,6 +17,8 @@ import NotFound from "../views/common/NotFound";
 import AdminPrivateRoute from "../AdminPrivateRoute";
 import Page403 from "../components/errors/Page403";
 import Page404 from "../components/errors/Page404";
+import ProductDetail from "../components/products/ProductDetail";
+import Products from "../views/common/Products";
 
 export default function AppRouter() {
   return (
@@ -45,6 +47,8 @@ export default function AppRouter() {
         /> */}
         <AdminPrivateRoute path="/admin" name="Admin" />
 
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/product-detail" component={ProductDetail} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/help" component={Help} />
         <Route exact path="/legal-info" component={Legal} />

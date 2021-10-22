@@ -1,7 +1,32 @@
+@use "../abstracts/index" as *;
 body {
   line-height: 1.5rem;
+  font-size: 1rem;
+  font-family: $montserratReg;
 }
 
-p {
-  font-size: 1rem;
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-family: $montserratMd;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 3.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
 }

@@ -16,7 +16,7 @@ const AboutUs = () => {
             alt="zapatos"
           />
           <div className="about__data">
-            <h2 className="about__title">¿Quiénes somos?</h2>
+            <h3 className="about__title">¿Quiénes somos?</h3>
             <hr />
             <p className="about__text">
               ¡Somos todo lo que necesitas!
@@ -37,7 +37,7 @@ const AboutUs = () => {
               alt="vestidos"
             />
             <div className="about__data">
-              <h2 className="about__title">¡Valores que nos distinguen!</h2>
+              <h3 className="about__title">¡Valores que nos distinguen!</h3>
               <hr />
               <ul>
                 <li>Responsabilidad</li>
@@ -54,7 +54,7 @@ const AboutUs = () => {
               alt="camisas"
             />
             <div className="about__data">
-              <h2 className="about__title">Nuestra filosofía</h2>
+              <h3 className="about__title">Nuestra filosofía</h3>
               <hr />
               <p className="about__text">
                 Nuestro mayor propósito es ayudarte a encontrar tú brillo
@@ -75,9 +75,9 @@ const AboutUs = () => {
             alt="camisetas"
           />
           <div className="about__data">
-            <h2 className="about__title">
+            <h3 className="about__title">
               ¡Ven y sé parte de nuestra familia!
-            </h2>
+            </h3>
             <hr />
           </div>
         </div>

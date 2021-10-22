@@ -161,30 +161,30 @@ const Home = () => {
       <section className="features-section">
         <div className="features-section__container">
           <FaCreditCard className="features-section__container--icon" />
-          <h2 className="features-section__container--title">
+          <h3 className="features-section__container--title">
             Compra segura en línea
-          </h2>
-          <h3 className="features-section__container--description">
-            Tus datos están protegidos bajo un sistema cifrado
           </h3>
+          <p className="features-section__container--description">
+            Tus datos están protegidos bajo un sistema cifrado
+          </p>
         </div>
         <div className="features-section__container">
           <FaGlobeAmericas className="features-section__container--icon" />
-          <h2 className="features-section__container--title">
+          <h3 className="features-section__container--title">
             Envíos internacionales
-          </h2>
-          <h3 className="features-section__container--description">
-            Hasta tu hogar
           </h3>
+          <p className="features-section__container--description">
+            Hasta tu hogar
+          </p>
         </div>
         <div className="features-section__container">
           <BiSupport className="features-section__container--icon" />
-          <h2 className="features-section__container--title">
+          <h3 className="features-section__container--title">
             Soporte técnico 24/7
-          </h2>
-          <h3 className="features-section__container--description">
-            Personalizado para cada uno de nuestros clientes
           </h3>
+          <p className="features-section__container--description">
+            Personalizado para cada uno de nuestros clientes
+          </p>
         </div>
       </section>
       <Footer />
