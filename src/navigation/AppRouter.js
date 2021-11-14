@@ -19,6 +19,7 @@ import Page403 from "../components/errors/Page403";
 import Page404 from "../components/errors/Page404";
 import ProductDetail from "../components/products/ProductDetail";
 import Products from "../views/common/Products";
+import MasterLayout from "../views/admin/MasterLayout";
 
 export default function AppRouter() {
   return (
@@ -40,12 +41,12 @@ export default function AppRouter() {
           )}
         </Route>
 
-        {/* <Route
+        <Route
           path="/admin"
           name="Admin"
           render={(props) => <MasterLayout {...props} />}
-        /> */}
-        <AdminPrivateRoute path="/admin" name="Admin" />
+        />
+        {/* <AdminPrivateRoute path="/admin" name="Admin" /> */}
 
         <Route exact path="/products" component={Products} />
         <Route exact path="/product-detail" component={ProductDetail} />
