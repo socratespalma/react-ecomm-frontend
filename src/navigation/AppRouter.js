@@ -19,6 +19,8 @@ import Page403 from "../components/errors/Page403";
 import Page404 from "../components/errors/Page404";
 import ProductDetail from "../components/products/ProductDetail";
 import Products from "../views/common/Products";
+import Forgot from "../views/auth/Forgot";
+import Reset from "../views/auth/Reset";
 
 export default function AppRouter() {
   return (
@@ -49,6 +51,8 @@ export default function AppRouter() {
 
         <Route exact path="/products" component={Products} />
         <Route exact path="/product-detail" component={ProductDetail} />
+        <Route exact path="/forgot" component={Forgot} />
+        <Route exact path="/reset" component={Reset} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/help" component={Help} />
         <Route exact path="/legal-info" component={Legal} />

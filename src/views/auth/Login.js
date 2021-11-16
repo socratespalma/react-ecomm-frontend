@@ -105,7 +105,7 @@ function Login() {
                 <span>Iniciar Sesión</span>
               </button>
             </form>
-            <Link to="">¿Olvidaste tu contraseña?</Link>
+            <Link to="/forgot">¿Olvidaste tu contraseña?</Link>
           </div>
           <div className="form-container">
             <p>
