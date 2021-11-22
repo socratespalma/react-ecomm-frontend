@@ -2,47 +2,28 @@ import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SidePanel from "../../components/SidePanel";
-import axios from "axios";
 import Notiflix from "notiflix";
+// import axios from "axios";
 
 function Forgot() {
-  const [forgotInput, setForgot] = useState({
-    email: "",
-    error_list: [],
-  });
+  const [email, setEmail] = useState("");
 
-  const handleInput = (e) => {
-    e.persist();
-    setForgot({ ...forgotInput, [e.target.name]: e.target.value });
-  };
-
-  const forgotSubmit = (e) => {
+  const forgotSubmit = async (e) => {
     e.preventDefault();
 
-    const data = {
-      email: forgotInput.email,
-    };
-
-    // axios
-    //   .post("forgot", data)
-    //   .then((res) => {})
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
-    // TODO: Falta testear metodo de axios y hacer endpoint en laravel
-
-    axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`/api/forgot`, data).then((res) => {
-        if (res.data.status === 200) {
-          Notiflix.Notify.success("Correo enviado con éxito");
-        } else if (res.data.status === 401) {
-          Notiflix.Notify.failure("Correo inválido");
-        } else {
-          setForgot({ ...forgotInput, error_list: res.data.validation_errors });
-        }
-      });
+    let response = await fetch("http://127.0.0.1:8000/api/forgot", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+      }),
     });
+
+    if (response.ok) {
+      Notiflix.Notify.success("Correo enviado con éxito");
+    } else {
+      Notiflix.Notify.failure("Correo inválido");
+    }
   };
 
   useEffect(() => {
@@ -63,8 +44,7 @@ function Forgot() {
                   type="email"
                   placeholder="user@ecomm.com"
                   name="email"
-                  onChange={handleInput}
-                  value={forgotInput.email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
                 <label className="control-label" htmlFor="input">
@@ -72,7 +52,7 @@ function Forgot() {
                 </label>
                 <i className="bar"></i>
                 <i className="input-error">error here</i>
-                <span>{forgotInput.error_list.email}</span>
+                <span></span>
               </div>
               <button className="button" type="submit">
                 <span>Enviar</span>
