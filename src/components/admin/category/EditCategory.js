@@ -1,49 +1,63 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Notiflix from "notiflix";
 
-const Category = () => {
-  const [categoryInput, setCategory] = useState({
-    slug: "",
-    name: "",
-    description: "",
-    error_list: [],
-  });
+function EditCategory(props) {
+  const [loading, setLoading] = useState(true);
+  const [categoryInput, setCategory] = useState([]);
+  const [error, setError] = useState([]);
+  const history = useHistory();
+
+  useEffect(() => {
+    const category_id = props.match.params.id;
+    axios.get(`/api/edit-category/${category_id}`).then((res) => {
+      if (res.data.status === 200) {
+        setCategory(res.data.category);
+      } else if (res.data.status === 404) {
+        Notiflix.Notify.failure("Error");
+        history.push("/admin/view-category");
+      }
+      setLoading(false);
+    });
+  }, [props.match.params.id, history]);
 
   const handleInput = (e) => {
     e.persist();
     setCategory({ ...categoryInput, [e.target.name]: e.target.value });
   };
 
-  const submitCategory = (e) => {
+  const updateCategory = (e) => {
     e.preventDefault();
-    const data = {
-      slug: categoryInput.slug,
-      name: categoryInput.name,
-      description: categoryInput.description,
-    };
 
-    axios.post(`/api/store-category`, data).then((res) => {
+    const category_id = props.match.params.id;
+    const data = categoryInput;
+
+    axios.put(`/api/update-category/${category_id}`, data).then((res) => {
       if (res.data.status === 200) {
-        Notiflix.Notify.success("Categoría agregada exitosamente");
-        document.getElementById("CATEGORY_FORM").reset();
-      } else if (res.data.status === 400) {
-        Notiflix.Notify.failure("Error al agregar categoría");
-        setCategory({ ...categoryInput, error_list: res.data.errors });
+        Notiflix.Notify.success("Categoría modificada exitosamente");
+        setError([]);
+      } else if (res.data.status === 422) {
+        Notiflix.Notify.failure("Los campos son requeridos");
+        setError(res.data.errors);
+      } else if (res.data.status === 404) {
+        Notiflix.Notify.failure("Error");
+        history.push("/admin/view-category");
       }
     });
   };
 
+  if (loading) {
+    return <h3>Loading Edit Category...</h3>;
+  }
+
   return (
     <div className="container">
       <div className="header-bar">
-        <h3 className="header-bar__title">Agregar Categoría</h3>
+        <h3 className="header-bar__title">Editar Categoría</h3>
+        <Link to="/admin/view-category">Regresar</Link>
       </div>
-      <form
-        onSubmit={submitCategory}
-        className="columns form"
-        id="CATEGORY_FORM"
-      >
+      <form onSubmit={updateCategory}>
         <div className="column">
           <div className="field">
             <label className="label">Slug</label>
@@ -56,7 +70,7 @@ const Category = () => {
                 name="slug"
                 placeholder="Ingrese el slug"
               />
-              <span>{categoryInput.error_list.slug}</span>
+              <small>{error.slug}</small>
             </div>
           </div>
           <div className="field">
@@ -70,7 +84,7 @@ const Category = () => {
                 name="name"
                 placeholder="Ingrese el nombre"
               />
-              <span>{categoryInput.error_list.name}</span>
+              <small>{error.name}</small>
             </div>
           </div>
         </div>
@@ -89,11 +103,11 @@ const Category = () => {
           </div>
         </div>
         <button type="submit" className="header-bar__button">
-          Agregar
+          Actualizar
         </button>
       </form>
     </div>
   );
-};
+}
 
-export default Category;
+export default EditCategory;
