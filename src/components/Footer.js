@@ -1,33 +1,40 @@
-import React from "react";
-import FooterNavbar from "./FooterNavbar";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import React from 'react'
+import FooterNavbar from './FooterNavbar'
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 export default function Footer() {
-  return (
-    <div className="main-footer">
-      <h2 className="main-footer__cta">Contáctenos</h2>
-      <section className="social-subsection">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.facebook.com/Amapola-Escarlata-1765011270283166"
-          className="social-subsection__anchor"
-        >
-          <FaFacebook className="social-subsection__icons" />
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.instagram.com/amapola_escarlata/"
-          className="social-subsection__anchor"
-        >
-          <FaInstagram className="social-subsection__icons" />
-        </a>
-        {/* <a href="#" className="social-subsection__anchor"> */}
-        <FaWhatsapp className="social-subsection__icons" />
-        {/* </a> */}
-      </section>
-      <FooterNavbar />
-    </div>
-  );
+	return (
+		<div className='main-footer'>
+			<div className='footer-container'>
+				<div className='contact'>
+					<h2 className='contact__title'>Contáctenos</h2>
+					<div className='contact__social'>
+						<a
+							target='_blank'
+							rel='noreferrer'
+							href='https://www.facebook.com/Amapola-Escarlata-1765011270283166'
+							className='contact__anchor'
+						>
+							<FaFacebook />
+						</a>
+						<a
+							target='_blank'
+							rel='noreferrer'
+							href='https://www.instagram.com/amapola_escarlata/'
+							className='contact__anchor'
+						>
+							<FaInstagram />
+						</a>
+						<a
+							href='https://wa.me/50512345678?text=send%20a%20premade%20message'
+							className='contact__anchor'
+						>
+							<FaWhatsapp />
+						</a>
+					</div>
+				</div>
+				<FooterNavbar />
+			</div>
+		</div>
+	)
 }

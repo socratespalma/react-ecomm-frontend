@@ -1,33 +1,32 @@
-@use "../abstracts/index" as abs;
+@use '../abstracts/index' as abs;
 
 .main-footer {
-  background-color: abs.$rosapastel;
-  font-family: abs.$montserratReg, sans-serif;
-  height: 13rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.5rem 0;
-
-  &__cta {
-    font-size: 1.7rem;
-  }
+	background-color: abs.$rosapastel;
+	padding: 2rem 1rem;
+	text-align: center;
 }
 
-.social-subsection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 9rem;
-  height: 2rem;
-  //   background-color: red;
+.footer-container {
+	flex-direction: column;
+	max-width: 1120px;
+	width: 100%;
+	margin: 0 auto;
+}
 
-  &__anchor {
-    color: abs.$primary-color;
-  }
+.contact {
+	&__title {
+		margin-top: 0;
+		font-family: abs.$montserratReg;
+		font-size: 2rem;
+	}
 
-  &__icons {
-    font-size: 2.1rem;
-  }
+	&__social {
+		margin: 0 auto;
+	}
+
+	&__anchor {
+		margin: 1rem;
+		color: abs.$black;
+		font-size: 2rem;
+	}
 }

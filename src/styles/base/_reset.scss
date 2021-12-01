@@ -14,9 +14,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-
 
 /* Remove default margin */
 
@@ -29,56 +28,61 @@ p,
 figure,
 blockquote,
 dl,
-dd {
-  margin: 0;
-  padding: 0;
+dd,
+button {
+	margin: 0;
+	padding: 0;
 }
-
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-  margin: 0;
+ul,
+ol {
+	list-style: none;
+	padding: 0;
 }
-
 
 /* Set core root defaults */
 
 html:focus-within {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
-
 
 /* Set core body defaults */
 
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
 }
-
 
 /* A elements that don't have a class get default styles */
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+	text-decoration-skip-ink: auto;
 }
 
-a:not([href]) {
-  text-decoration: none;
+a {
+	text-decoration: none;
 }
 
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table td:not([align]),
+table th:not([align]) {
+	text-align: inherit;
+}
 
 /* Make images easier to work with */
 
 img,
 picture {
-  max-width: 100%;
-  display: block;
+	max-width: 100%;
+	display: block;
 }
-
 
 /* Inherit fonts for inputs and buttons */
 
@@ -86,28 +90,51 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: none;
+	display: inline-flex;
+	font-size: 1rem;
+	height: 2.5em;
+	justify-content: flex-start;
+	line-height: 1.5;
+	padding-bottom: calc(0.5em - 1px);
+	padding-left: calc(0.75em - 1px);
+	padding-right: calc(0.75em - 1px);
+	padding-top: calc(0.5em - 1px);
+	position: relative;
+	vertical-align: top;
 }
-
+input:active,
+input:focus,
+button:active,
+button:focus,
+textarea:active,
+textarea:focus,
+select:active,
+select:focus {
+	outline: 0;
+}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 .trick {
-  display: flex;
-  flex-direction: column;
-  // height: 100vh;
+	// height: 100vh;
 }

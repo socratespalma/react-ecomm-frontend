@@ -1,25 +1,43 @@
-@use "../abstracts/index" as abs;
+@use '../abstracts/index' as abs;
 
 .footer-last-section {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0 1rem;
-  font-family: abs.$montserratMd, sans-serif;
-  width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	font-family: abs.$montserratMd, sans-serif;
+	padding: 1.5rem 0;
+
+	@include abs.breakpoint('large') {
+		flex-direction: row;
+	}
+}
+
+.footer-copyright {
+	margin: 0;
 }
 
 .footer-nav {
-  &__li {
-    display: inline-block;
-    list-style: none;
+	& ul {
+		display: table;
+	}
 
-    &--nl {
-      display: block;
-      text-decoration: none;
-      color: abs.$primary-color;
-      font-size: 1rem;
-      padding: 0.8rem 1.7rem;
-    }
-  }
+	&__li {
+		display: block;
+		list-style: none;
+
+		&--nl {
+			display: block;
+			text-decoration: none;
+			color: abs.$black;
+			font-size: 1rem;
+			padding: 0.8rem 1.7rem;
+		}
+	}
+
+	@include abs.breakpoint('small') {
+		&__li {
+			display: inline-block;
+		}
+	}
 }

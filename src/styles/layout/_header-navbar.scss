@@ -1,28 +1,83 @@
-@use "../abstracts/index" as abs;
+@use '../abstracts/index' as abs;
 
-.header-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  background-color: abs.$header;
+.nav-bar {
+	height: 3rem;
+	width: 100%;
+	overflow: hidden;
+	background-color: abs.$header;
+	transition: transform 0.3s ease-in-out;
 
-  &__li {
-    display: inline-block;
-    list-style: none;
+	.burger {
+		position: absolute;
+		z-index: 5;
+		top: 3.5rem;
+		right: 0;
+		border: none;
+		background-color: abs.$white;
+		border-radius: 0;
+		color: abs.$logo;
+		height: 3rem;
+		padding: 0 0.8rem;
+		font-size: 1.5rem;
+	}
 
-    &--nl {
-      display: block;
-      text-decoration: none;
-      color: abs.$primary-color;
-      font-size: 1.1rem;
-      font-family: abs.$montserratReg, sans-serif;
-      padding: 0 1.7rem;
-    }
-  }
+	@include abs.breakpoint('medium') {
+		position: static;
+		padding: 0;
+		transform: none;
+		height: 3rem;
+
+		.burger {
+			top: 3.5rem;
+		}
+	}
+
+	@include abs.breakpoint('large') {
+		.burger {
+			display: none;
+		}
+	}
+}
+
+.cat-menu {
+	display: block;
+	width: 100%;
+	margin: 0;
+	display: table;
+
+	& li {
+		display: inline-block;
+	}
+
+	&__link {
+		display: block;
+		color: abs.$black;
+		line-height: 3rem;
+		font-size: 1.1rem;
+		padding: 0 1.7rem;
+	}
+
+	@include abs.breakpoint('medium') {
+		display: table;
+		margin: 0 auto;
+		padding: 0;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	@include abs.breakpoint('large') {
+		width: auto;
+		margin: 0 auto;
+	}
+}
+
+.show-menu {
+	height: auto;
 }
 
 .active {
-  color: abs.$white;
-  @include abs.transition-ease-in-out;
+	color: abs.$white;
+	@include abs.transition-ease-in-out;
+	font-weight: 700;
 }

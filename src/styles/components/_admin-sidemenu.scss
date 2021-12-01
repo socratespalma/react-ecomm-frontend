@@ -1,0 +1,21 @@
+@use '../abstracts/index' as abs;
+
+.menu {
+	font-size: 1rem;
+	letter-spacing: 1.5px;
+	&__list {
+		line-height: 1.25;
+	}
+	&__link {
+		border-radius: 3px;
+		color: #4a4a4a;
+		display: block;
+		padding: 1em 0.75em;
+	}
+
+	&__active {
+		color: abs.$white;
+		background-color: abs.$logo;
+		font-weight: 700;
+	}
+}

@@ -1,26 +1,27 @@
-@use "../abstracts/index" as abs;
+@use '../abstracts/index' as *;
+
 // * Fonts *
 @font-face {
-  font-family: abs.$caviarDreams;
-  src: url("../../assets/fonts/CaviarDreams.ttf");
+	font-family: $caviarDreams;
+	src: url('../../assets/fonts/CaviarDreams.ttf');
 }
 
 @font-face {
-  font-family: abs.$helloVintage;
-  src: url("../../assets/fonts/HelloVintage.ttf");
+	font-family: $helloVintage;
+	src: url('../../assets/fonts/HelloVintage.ttf');
 }
 
 @font-face {
-  font-family: abs.$montserratReg;
-  src: url("../../assets/fonts/Montserrat-Regular.ttf");
+	font-family: $montserratReg;
+	src: url('../../assets/fonts/Montserrat-Regular.ttf');
 }
 
 @font-face {
-  font-family: abs.$montserratLt;
-  src: url("../../assets/fonts/Montserrat-Light.ttf");
+	font-family: $montserratLt;
+	src: url('../../assets/fonts/Montserrat-Light.ttf');
 }
 
 @font-face {
-  font-family: abs.$montserratMd;
-  src: url("../../assets/fonts/Montserrat-Medium.ttf");
+	font-family: $montserratMd;
+	src: url('../../assets/fonts/Montserrat-Medium.ttf');
 }

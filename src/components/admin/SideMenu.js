@@ -1,22 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from 'react-router-dom'
 
 const SideMenu = () => {
-  return (
-    <aside class="menu is-hidden-mobile">
-      <p class="menu-label">General</p>
-      <ul class="menu-list">
-        <li>
-          <Link to="/admin/dashboard">Dashboard</Link>
-        </li>
-        <li>
-          <Link to="/admin/profile">Profile</Link>
-        </li>
-        <li>
-          <Link>Other</Link>
-        </li>
-      </ul>
-    </aside>
-  );
-};
+	return (
+		<aside className='menu side-menu'>
+			<ul className='menu__list'>
+				<li className='menu__item'>
+					<NavLink to='/admin/dashboard' className='menu__link' activeClassName='menu__active'>
+						Dashboard
+					</NavLink>
+				</li>
+				<li className='menu__item'>
+					<NavLink to='/admin/profile' className='menu__link' activeClassName='menu__active'>
+						Profile
+					</NavLink>
+				</li>
+				<li className='menu__item'>
+					<NavLink to='/admin/products' className='menu__link' activeClassName='menu__active'>
+						Productos
+					</NavLink>
+				</li>
+				<li className='menu__item'>
+					<NavLink to='/admin/category' className='menu__link' activeClassName='menu__active'>
+						Categorias
+					</NavLink>
+				</li>
+				<li className='menu__item'>
+					<NavLink to='/admin/view-category' className='menu__link' activeClassName='menu__active'>
+						Ver Categorias
+					</NavLink>
+				</li>
+			</ul>
+		</aside>
+	)
+}
 
-export default SideMenu;
+export default SideMenu
