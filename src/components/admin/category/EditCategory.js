@@ -5,7 +5,7 @@ import Notiflix from 'notiflix'
 
 function EditCategory(props) {
 	const [loading, setLoading] = useState(true)
-	const [categoryInput, setCategory] = useState()
+	const [categoryInput, setCategory] = useState([])
 	const [error, setError] = useState([])
 	const history = useHistory()
 
@@ -24,18 +24,13 @@ function EditCategory(props) {
 
 	const handleInput = (e) => {
 		e.persist()
-		setCategory({
-			...categoryInput,
-			[e.target.name]: e.target.name === 'status' ? e.target.checked : e.target.value,
-		})
+		setCategory({ ...categoryInput, [e.target.name]: e.target.value })
 	}
 
 	const updateCategory = (e) => {
 		e.preventDefault()
 
 		const category_id = props.match.params.id
-
-		categoryInput.status = categoryInput.status ? '1' : '0'
 		const data = categoryInput
 
 		axios.put(`/api/update-category/${category_id}`, data).then((res) => {
@@ -60,9 +55,7 @@ function EditCategory(props) {
 		<div className='container'>
 			<div className='header-bar'>
 				<h3 className='header-bar__title'>Editar Categoría</h3>
-				<Link to='/admin/view-category' className='header-bar__button'>
-					Regresar
-				</Link>
+				<Link to='/admin/view-category'>Regresar</Link>
 			</div>
 			<form onSubmit={updateCategory} className='columns form'>
 				<div className='column'>
@@ -108,23 +101,10 @@ function EditCategory(props) {
 							/>
 						</div>
 					</div>
-					<div className='field'>
-						<label className='checkbox'>
-							<input
-								type='checkbox'
-								onChange={handleInput}
-								defaultChecked={categoryInput.status === 1 ? true : false}
-								name='status'
-							/>
-							Status (checked = oculto)
-						</label>
-					</div>
 				</div>
-				<div className='column col-full'>
-					<button type='submit' className='header-bar__button'>
-						Actualizar
-					</button>
-				</div>
+				<button type='submit' className='header-bar__button'>
+					Actualizar
+				</button>
 			</form>
 		</div>
 	)

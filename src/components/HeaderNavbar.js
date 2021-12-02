@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { VscMenu } from 'react-icons/vsc'
 import { CgClose } from 'react-icons/cg'
