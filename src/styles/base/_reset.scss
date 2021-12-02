@@ -86,7 +86,7 @@ picture {
 
 /* Inherit fonts for inputs and buttons */
 
-input,
+input:not([type='checkbox']),
 button,
 textarea,
 select {

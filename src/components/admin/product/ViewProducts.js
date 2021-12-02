@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-const ViewCategory = () => {
+const ViewProducts = () => {
 	const [loading, setLoading] = useState(true)
 	const [categoryList, setCategoryList] = useState([])
 
@@ -21,9 +21,9 @@ const ViewCategory = () => {
 	} else {
 		let catStatus = ''
 		viewcategory_HTMLTABLE = categoryList.map((item) => {
-			if (item.status === '0') {
+			if (item.status === 0) {
 				catStatus = 'Visible'
-			} else if (item.status === '1') {
+			} else if (item.status === 1) {
 				catStatus = 'Oculto'
 			}
 			return (
@@ -43,12 +43,11 @@ const ViewCategory = () => {
 			)
 		})
 	}
-
 	return (
 		<div className='container'>
 			<div className='header-bar'>
-				<h3 className='header-bar__title'>Lista de Categorías</h3>
-				<Link to='/admin/add-category' className='header-bar__button'>
+				<h3 className='header-bar__title'>Inventario de Productos</h3>
+				<Link to='/admin/add-product' className='header-bar__button'>
 					Crear
 				</Link>
 			</div>
@@ -59,7 +58,7 @@ const ViewCategory = () => {
 							<th>Slug</th>
 							<th>Nombre</th>
 							<th>Descripción</th>
-							<th>Acciones</th>
+							<th>Stock</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -70,4 +69,4 @@ const ViewCategory = () => {
 	)
 }
 
-export default ViewCategory
+export default ViewProducts

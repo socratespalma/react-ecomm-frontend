@@ -1,5 +1,21 @@
 @use '../abstracts/index' as abs;
 
+.help-danger {
+	color: #f14668;
+}
+
+.checkbox:hover,
+.radio:hover {
+	color: #363636;
+}
+.checkbox,
+.radio {
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1.25;
+	position: relative;
+}
+
 .buttons {
 	display: flex;
 	justify-content: flex-start;
@@ -75,8 +91,7 @@
 }
 
 .form {
-	.input,
-	.button {
+	.input {
 		-webkit-appearance: none;
 		align-items: center;
 		border: 1px solid transparent;
@@ -154,21 +169,6 @@
 			.textarea:focus {
 				border-color: #485fc7;
 				box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%);
-			}
-
-			.button {
-				background-color: #fff;
-				border-color: #dbdbdb;
-				border-width: 1px;
-				color: #363636;
-				cursor: pointer;
-				justify-content: center;
-				padding-bottom: calc(0.5em - 1px);
-				padding-left: 1em;
-				padding-right: 1em;
-				padding-top: calc(0.5em - 1px);
-				text-align: center;
-				white-space: nowrap;
 			}
 		}
 	}
